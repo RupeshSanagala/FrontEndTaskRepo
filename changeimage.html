@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image</title>
+</head>
+<body>
+    <img id="myImage" src="../assets/images/NTR.jpeg" alt="Image" width="300">
+   
+    <br><br>
+    <button onclick="changeImage()">Change Image</button>
+
+    <script>
+        function changeImage() {
+            const image = document.getElementById("myImage");
+            const currentSrc = image.src;
+
+            // Define the relative paths to your images
+            const image1 = "../assets/images/NTR.jpeg";
+            const image2 = "../assets/images/Nani.jpeg";
+
+            // Use endsWith to check and switch images
+            if (currentSrc.endsWith("NTR.jpeg")) {
+                image.src = image2;
+            } else {
+                image.src = image1;
+            }
+        }
+    </script>
+</body>
+</html>
+

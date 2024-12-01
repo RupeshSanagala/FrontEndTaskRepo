@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Players</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+        .content-container img{
+            
+            padding: 20px;
+            margin-top: 50px;
+            margin-left: 150px;
+            border: 2px solid #f1b03e;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: col;
+            align-items: center;
+            
+            
+        }
+
+        .pic {
+            height: 400px;
+            width: 400px;
+            
+            border-radius: 20%; 
+            border: 3px solid white; 
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            
+            color: #2bd057;
+            border: 2px solid #631414;
+            border-radius: 5px;
+        
+            font-size: 16px;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0ebe7b;
+            color: white;
+        }
+        #actorName{
+            margin-left: 300px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <img class="pic" id="toggleImage" src="../assets/images/Allu Arjun.jpeg" alt="AlluArjun">
+        
+        <h2 id="actorName">Allu Arjun</h2>
+        <div class="button-container">
+            <button class="toggle-btn" onclick="changeActor(0)">AlluArjun</button>
+            <button class="toggle-btn" onclick="changeActor(1)">Mahesh Babu</button>
+            <button class="toggle-btn" onclick="changeActor(2)">Nani</button>
+            <button class="toggle-btn" onclick="changeActor(3)">Jr.NTR</button>
+            <button class="toggle-btn" onclick="changeActor(4)">Prabhas</button>
+            <button class="toggle-btn" onclick="changeActor(5)">Venkatesh</button>
+        </div>
+    </div>
+
+    <script>
+       
+        const actors = [
+            { name: "Allu Arjun", image: "../assets/images/Allu Arjun.jpeg" },
+            { name: "Mahesh Babu", image: "../assets/images/Mahesh.jpeg" },
+            { name: "Nani", image: "../assets/images/Nani.jpeg" },
+            { name: "Jr.NTR", image: "../assets/images/NTR.jpeg"},
+            {name: "Prabhas", image: "../assets/images/Prabha.jpeg"},
+            {name: "Venkatesh",image:"../assets/images/Venky.jpeg"}
+        ];
+
+        const imageElement = document.getElementById('toggleImage');
+        const nameElement = document.getElementById('actorName');
+        nameElement.style.fontFamily.bold
+
+        function changeActor(index) {
+            const actor = actors[index];
+            imageElement.src = actor.image;
+            nameElement.textContent = actor.name;
+        }
+    </script>
+</body>
+</html>
