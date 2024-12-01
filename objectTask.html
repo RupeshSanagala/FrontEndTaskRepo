@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let emp = [
+              {id:4568,name:'druva',post:"java dev",salary:34560,city:"chennai",state:"tamil Nadu",age:72,gender:"male"},
+              {id:4569,name:'ramu',post:"Python dev",salary:44560,city:"mumbai",state:"tamil Nadu",age:16,gender:"male"},
+              {id:5468,name:'ravi',post:".net dev",salary:24560,city:"bangalore",state:"tamil Nadu",age:36,gender:"male"},
+              {id:2368,name:'ramya',post:"C++ dev",salary:14560,city:"coimbatore",state:"tamil Nadu",age:66,gender:"Female"},
+              {id:4768,name:'navya',post:"Manager",salary:74560,city:"pune",state:"Maharastra",age:61,gender:"Female"},
+              {id:4168,name:'sanvi',post:"javaScript dev",salary:94560,city:"ongole",state:"Andhra",age:56,gender:"Female"},
+              {id:4968,name:'jay',post:"React dev",salary:84560,city:"vizag",state:"Andhra",age:46,gender:"male"},
+              {id:4168,name:'amit',post:"Angular dev",salary:25560,city:"chennai",state:"tamil Nadu",age:26,gender:"male"},
+              {id:4268,name:'ajay',post:"Golang dev",salary:72560,city:"chennai",state:"tamil Nadu",age:35,gender:"male"},
+              {id:3568,name:'vinod',post:"Manager",salary:30560,city:"chennai",state:"tamil Nadu",age:24,gender:"male"}
+              
+
+        ]
+        document.write("dispaly all emp info");
+        document.write(`<br>========================================================<br>`)
+        for(let s of emp){
+            document.write((`Id: ${s.id}, Name: ${s.name},Age: ${s.age}, Gender:${s.gender}, Post: ${s.post}, Salary: ${s.salary}, City: ${s.city}, State:${s.state}`),"<br>")
+        }
+        document.write(`<br>========================================================<br>`)
+        document.write("display all emp details whose post is a manager");
+        document.write(`<br>========================================================<br>`)
+        for(let e of emp){
+            if(e.post==='Manager'){
+                document.write((`Id: ${e.id}, Name: ${e.name},Age: ${e.age}, Gender:${e.gender}, Post: ${e.post}, Salary: ${e.salary}, City: ${e.city}, State:${e.state}`),"<br>")
+            }
+        }
+        document.write(`<br>========================================================<br>`)
+        document.write("display all emp whose gender is female")
+        document.write(`<br>========================================================<br>`)
+
+        for(let e1 of emp){
+            if(e1.gender==='Female'){
+                document.write((`Id: ${e1.id}, Name: ${e1.name},Age: ${e1.age}, Gender:${e1.gender}, Post: ${e1.post}, Salary: ${e1.salary}, City: ${e1.city}, State:${e1.state}`),"<br>")
+            }
+        }
+
+        document.write(`<br>========================================================<br>`)
+        document.write("display all emp info whose age is > 55")
+        document.write(`<br>========================================================<br>`)
+
+        for(let e2 of emp){
+            if(e2.age>55){
+                document.write((`Id: ${e2.id}, Name: ${e2.name},Age: ${e2.age}, Gender:${e2.gender}, Post: ${e2.post}, Salary: ${e2.salary}, City: ${e2.city}, State:${e2.state}`),"<br>")
+            }
+        }
+        document.write(`<br>========================================================<br>`)
+        document.write(`display emp info who belongs to tamil nadu`)
+        document.write(`<br>========================================================<br>`)
+        for(let e3 of emp){
+            if(e3.state==="tamil Nadu"){
+                document.write((`Id: ${e3.id}, Name: ${e3.name},Age: ${e3.age}, Gender:${e3.gender}, Post: ${e3.post}, Salary: ${e3.salary}, City: ${e3.city}, State:${e3.state}`),"<br>")
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        h2{
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+
+        }
+        body{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        .calculator {
+            height: 400px;
+            width: 50%;
+            text-align: center;
+            padding: 40px;
+            border: 2px solid hsl(0, 79%, 45%);
+            margin-top: 200px;
+            border-radius: 10px;
+            
+        }
+        .calculator input {
+            width: 10%;
+            height: 30px;
+            margin: 10px 0;
+            font-size: medium;
+            border-radius: 10px;
+        }
+        .calculator button {
+            width: 10%;
+            height: 40px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: blanchedalmond;
+          
+        }
+        .label{
+            font-size: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: larger;
+            color: rgb(12, 11, 11);
+            
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <h2><b>Simple Calculator</b></h2>
+    <label for="num1" class="label"><b>Enter First Number:</b></label>
+    <input type="number" id="num1">
+    <br>
+    <label for="" class="label"><b>Enter Second Number:</b></label>
+    <input type="number" id="num2" name="Enter second number">
+    <br>
+    <button onclick="calculate('add')">Add</button>
+    <button onclick="calculate('sub')">Subtract</button>
+    <button onclick="calculate('mul')">Multiply</button>
+    <button onclick="calculate('div')">Divide</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function calculate(operation) {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        let result;
+
+        // Perform the selected operation
+        if (isNaN(num1) || isNaN(num2)) {
+            result = "Please enter valid numbers.";
+        } else {
+            switch (operation) {
+                case 'add':
+                    result = `Result: ${num1 + num2}`;
+                    break;
+                case 'sub':
+                    result = `Result: ${num1 - num2}`;
+                    break;
+                case 'mul':
+                    result = `Result: ${num1 * num2}`;
+                    break;
+                case 'div':
+                    result = num2 !== 0 ? `Result: ${num1 / num2}` : "Cannot divide by zero.";
+                    break;
+                default:
+                    result = "Invalid operation.";
+            }
+        }
+
+        // Display the result
+        document.getElementById('result').innerText = result;
+    }
+</script>
+
+</body>
+</html>
